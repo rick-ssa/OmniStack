@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose')
 const routes = require('./routes');
+const cors = require('cors');
 
 const server = express();
 
@@ -8,6 +9,7 @@ mongoose.connect('mongodb+srv://rick:kcir3333@cluster0-sz16m.mongodb.net/omniSta
     useNewUrlParser: true
 });
 
+server.use(cors())
 server.use(express.json())
 server.use(routes)
 
